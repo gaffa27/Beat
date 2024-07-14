@@ -23,6 +23,7 @@ extern NSString * const BeatSettingAutocomplete;
 extern NSString * const BeatSettingUseSansSerif;
 extern NSString * const BeatSettingMagnification;
 extern NSString * const BeatSettingAutomaticLineBreaks;
+extern NSString * const BeatSettingShowInvisibles;
 extern NSString * const BeatSettingUpdatePluginsAutomatically;
 extern NSString * const BeatSettingBackupURL;
 

@@ -107,6 +107,7 @@ typedef NS_ENUM(NSInteger, BeatFontType);
 
 @property (nonatomic) bool autocomplete;
 @property (nonatomic) bool autoLineBreaks;
+@property (nonatomic) bool showInvisibles;
 @property (nonatomic) bool automaticContd;
 
 @property (nonatomic) bool matchParentheses;

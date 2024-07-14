@@ -47,6 +47,7 @@ NSString* const BeatSettingAutocomplete 				= @"autocomplete";
 NSString* const BeatSettingUseSansSerif 				= @"useSansSerif";
 NSString* const BeatSettingMagnification 				= @"magnification";
 NSString* const BeatSettingAutomaticLineBreaks 			= @"autoLineBreaks";
+NSString* const BeatSettingShowInvisibles               = @"showInvisibles";
 NSString* const BeatSettingUpdatePluginsAutomatically 	= @"updatePluginsAutomatically";
 NSString* const BeatSettingBackupURL 					= @"backupURL";
 
@@ -108,7 +109,8 @@ NSString* const BeatSettingDarkMode                     = @"Dark Mode";
 		// Structure: Document class property name, key, default
 		BeatSettingMatchParentheses: @[MATCH_PARENTHESES_KEY, @YES],
 		BeatSettingShowPageNumbers: @[SHOW_PAGE_NUMBERS_KEY, @YES],
-		BeatSettingAutomaticLineBreaks: @[BeatSettingAutomaticLineBreaks, @YES],
+        BeatSettingAutomaticLineBreaks: @[BeatSettingAutomaticLineBreaks, @YES],
+        BeatSettingShowInvisibles: @[BeatSettingShowInvisibles, @NO],
 		BeatSettingShowSceneNumbers: @[SHOW_SCENE_LABELS_KEY, @YES],
 		BeatSettingHideFountainMarkup: @[HIDE_FOUNTAIN_MARKUP_KEY, @NO],
 		BeatSettingTypewriterMode: @[TYPEWRITER_KEY, @NO],

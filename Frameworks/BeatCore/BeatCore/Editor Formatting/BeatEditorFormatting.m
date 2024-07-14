@@ -700,12 +700,12 @@ static NSString* const BeatRepresentedLineKey = @"representedLine";
 	if (line.isTitlePage && line.titleRange.length > 0) {
 		[self setForegroundColor:themeManager.commentColor line:line range:line.titleRange];
 	}
-	
+	/*
 	// Bullets for forced empty lines are invisible, too
 	else if ((line.string.containsOnlyWhitespace && line.length >= 2)) {
 		[self setForegroundColor:themeManager.invisibleTextColor line:line range:NSMakeRange(0, line.length)];
 	}
-	
+	*/
 	// Color markers
 	else if (line.markerRange.length) {
 		BXColor *color;

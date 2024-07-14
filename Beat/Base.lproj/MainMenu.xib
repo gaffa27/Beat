@@ -705,6 +705,15 @@ DQ
                                     <action selector="toggleSetting:" target="-1" id="wAN-b3-RvM"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="Show Invisibles" id="LIs-qL-T54" customClass="BeatOnOffMenuItem" customModule="Beat" customModuleProvider="target">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="settingKey" value="showInvisibles"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="toggleSetting:" target="-1" id="soA-A5-6gd"/>
+                                </connections>
+                            </menuItem>
                         </items>
                     </menu>
                 </menuItem>

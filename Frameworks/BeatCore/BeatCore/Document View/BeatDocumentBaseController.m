@@ -98,6 +98,15 @@
     [BeatUserDefaults.sharedDefaults saveBool:autoLineBreaks forKey:BeatSettingAutomaticLineBreaks];
 }
 
+- (bool)showInvisibles
+{
+    return [BeatUserDefaults.sharedDefaults getBool:BeatSettingShowInvisibles];
+}
+- (void)setShowInvisibles:(bool)showInvisibles
+{
+    [BeatUserDefaults.sharedDefaults saveBool:showInvisibles forKey:BeatSettingShowInvisibles];
+}
+
 - (bool)automaticContd
 {
     return [BeatUserDefaults.sharedDefaults getBool:BeatSettingAutomaticContd];

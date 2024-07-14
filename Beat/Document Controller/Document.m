@@ -763,10 +763,18 @@
 
 - (void)ensureLayout
 {
+	// self.layoutManager.showsInvisibleCharacters  = [BeatUserDefaults.sharedDefaults //getBool:BeatSettingShowInvisibles];
+	//self.layoutManager.showsControlCharacters  = [BeatUserDefaults.sharedDefaults //getBool:BeatSettingShowInvisibles];
+
+	//NSLog(@"showInvisibles: %@", self.layoutManager.showsInvisibleCharacters?@"YES":@"NO");
+
 	[self.textView.layoutManager ensureLayoutForTextContainer:self.textView.textContainer];
 	
 	self.textView.needsDisplay = true;
 	self.textView.needsLayout = true;
+	
+	//self.layoutManager.invalidateGlyphs(forCharacterRange: storageRange, changeInLength: 0, actualCharacterRange: nil);
+	//self.layoutManager.ensureGlyphs(forGlyphRange: storageRange)
 	
 	[self.marginView updateBackground];
 	
@@ -973,8 +981,10 @@
 {
 	if (menuItem == nil || menuItem.settingKey.length == 0) return;
 	
-	if (menuItem.documentSetting) [self.documentSettings toggleBool:menuItem.settingKey];
-	else [BeatUserDefaults.sharedDefaults toggleBool:menuItem.settingKey];
+	if (menuItem.documentSetting) 
+		[self.documentSettings toggleBool:menuItem.settingKey];
+	else 
+		[BeatUserDefaults.sharedDefaults toggleBool:menuItem.settingKey];
 	
 	[self ensureLayout];
 }
