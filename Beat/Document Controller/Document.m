@@ -763,18 +763,10 @@
 
 - (void)ensureLayout
 {
-	// self.layoutManager.showsInvisibleCharacters  = [BeatUserDefaults.sharedDefaults //getBool:BeatSettingShowInvisibles];
-	//self.layoutManager.showsControlCharacters  = [BeatUserDefaults.sharedDefaults //getBool:BeatSettingShowInvisibles];
-
-	//NSLog(@"showInvisibles: %@", self.layoutManager.showsInvisibleCharacters?@"YES":@"NO");
-
 	[self.textView.layoutManager ensureLayoutForTextContainer:self.textView.textContainer];
 	
 	self.textView.needsDisplay = true;
 	self.textView.needsLayout = true;
-	
-	//self.layoutManager.invalidateGlyphs(forCharacterRange: storageRange, changeInLength: 0, actualCharacterRange: nil);
-	//self.layoutManager.ensureGlyphs(forGlyphRange: storageRange)
 	
 	[self.marginView updateBackground];
 	
@@ -1489,6 +1481,18 @@
 	self.hideFountainMarkup = [BeatUserDefaults.sharedDefaults getBool:BeatSettingHideFountainMarkup];
 	
 	[self.textView toggleHideFountainMarkup];
+		
+	[self updateLayout];
+}
+
+
+#pragma mark - Show Invisible Characters
+
+- (IBAction)toggleShowInvisibles:(id)sender {
+	[BeatUserDefaults.sharedDefaults toggleBool:BeatSettingShowInvisibles];
+	self.showInvisibles = [BeatUserDefaults.sharedDefaults getBool:BeatSettingShowInvisibles];
+	
+	[self.textView toggleShowInvisibles];
 		
 	[self updateLayout];
 }

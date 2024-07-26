@@ -1189,6 +1189,16 @@ DQ
                                     <action selector="toggleDisableFormatting:" target="-1" id="KSj-os-foW"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="Show Invisibles" id="zKD-41-AeU" customClass="BeatOnOffMenuItem" customModule="Beat" customModuleProvider="target">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="settingKey" value="showInvisibles"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="documentSetting" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="toggleShowInvisibles:" target="-1" id="m5W-mL-5fT"/>
+                                </connections>
+                            </menuItem>
                         </items>
                     </menu>
                 </menuItem>

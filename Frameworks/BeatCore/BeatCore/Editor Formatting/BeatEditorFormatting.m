@@ -415,6 +415,10 @@ static NSString* const BeatRepresentedLineKey = @"representedLine";
 			range = line.range;
 			if (line == self.parser.lines.lastObject) range = line.textRange; // Don't go out of range
 		}
+        
+        if (_delegate) {
+            
+        }
 	}
     	
 	// Add new attributes

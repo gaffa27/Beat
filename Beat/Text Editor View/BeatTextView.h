@@ -137,6 +137,7 @@ typedef NS_ENUM(NSInteger, BeatTextviewPopoverMode) {
 -(void)redrawUI;
 -(void)updateMarkupVisibility;
 -(void)toggleHideFountainMarkup;
+-(void)toggleShowInvisibles;
 - (NSRect)rectForRange:(NSRange)range;
 
 
