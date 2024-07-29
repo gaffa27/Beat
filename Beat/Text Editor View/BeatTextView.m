@@ -1131,6 +1131,41 @@ double clamp(double d, double min, double max)
 }
 
 
+#pragma mark - Hiding markup
+
+/// Updates the markup based on caret position.
+-(void)updateInvisiblesDisplay
+{
+	if (_editorDelegate.documentIsLoading || self.string.length == 0) return;
+	
+	Line* line = self.editorDelegate.currentLine;
+	static Line* prevLine;
+	
+	if (line != prevLine) {
+		// If the line changed, let's redraw the range
+		bool lineInRange = (NSMaxRange(line.textRange) <= self.string.length);
+		bool prevLineInRange = (NSMaxRange(prevLine.textRange) <= self.string.length);
+		
+		if (lineInRange) [self.layoutManager invalidateGlyphsForCharacterRange:line.textRange changeInLength:0 actualCharacterRange:nil];
+		if (prevLineInRange) [self.layoutManager invalidateGlyphsForCharacterRange:prevLine.textRange changeInLength:0 actualCharacterRange:nil];
+		if (prevLineInRange) [self.layoutManager invalidateLayoutForCharacterRange:prevLine.textRange actualCharacterRange:nil];
+		if (lineInRange) [self.layoutManager invalidateLayoutForCharacterRange:line.textRange actualCharacterRange:nil];
+	}
+	
+	prevLine = line;
+}
+
+/// Toggles show invisibles on/off
+-(void)toggleShowInvisibles
+{
+	[self.layoutManager invalidateGlyphsForCharacterRange:(NSRange){ 0, self.string.length } changeInLength:0 actualCharacterRange:nil];
+	[self updateInvisiblesDisplay];
+	
+	self.needsDisplay = true;
+	self.needsLayout = true;
+}
+
+
 #pragma mark - Layout manager convenience methods
 
 - (NSRect)rectForRange:(NSRange)range

@@ -705,6 +705,15 @@ DQ
                                     <action selector="toggleSetting:" target="-1" id="wAN-b3-RvM"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="Show Invisibles" id="LIs-qL-T54" customClass="BeatOnOffMenuItem" customModule="Beat" customModuleProvider="target">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="settingKey" value="showInvisibles"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="toggleSetting:" target="-1" id="soA-A5-6gd"/>
+                                </connections>
+                            </menuItem>
                         </items>
                     </menu>
                 </menuItem>
@@ -1187,6 +1196,16 @@ DQ
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="toggleDisableFormatting:" target="-1" id="KSj-os-foW"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Show Invisibles" id="zKD-41-AeU" customClass="BeatOnOffMenuItem" customModule="Beat" customModuleProvider="target">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="settingKey" value="showInvisibles"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="documentSetting" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="toggleShowInvisibles:" target="-1" id="m5W-mL-5fT"/>
                                 </connections>
                             </menuItem>
                         </items>

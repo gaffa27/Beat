@@ -28,6 +28,7 @@
 @property (nonatomic, weak) IBOutlet NSButton *matchParentheses;
 @property (nonatomic, weak) IBOutlet NSButton *automaticContd;
 @property (nonatomic, weak) IBOutlet NSButton *autoLineBreaks;
+@property (nonatomic, weak) IBOutlet NSButton *showInvisbles;
 @property (nonatomic, weak) IBOutlet NSButton *autocomplete;
 @property (nonatomic, weak) IBOutlet NSButton *showMarkersInScrollbar;
 

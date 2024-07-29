@@ -973,8 +973,10 @@
 {
 	if (menuItem == nil || menuItem.settingKey.length == 0) return;
 	
-	if (menuItem.documentSetting) [self.documentSettings toggleBool:menuItem.settingKey];
-	else [BeatUserDefaults.sharedDefaults toggleBool:menuItem.settingKey];
+	if (menuItem.documentSetting) 
+		[self.documentSettings toggleBool:menuItem.settingKey];
+	else 
+		[BeatUserDefaults.sharedDefaults toggleBool:menuItem.settingKey];
 	
 	[self ensureLayout];
 }
@@ -1479,6 +1481,18 @@
 	self.hideFountainMarkup = [BeatUserDefaults.sharedDefaults getBool:BeatSettingHideFountainMarkup];
 	
 	[self.textView toggleHideFountainMarkup];
+		
+	[self updateLayout];
+}
+
+
+#pragma mark - Show Invisible Characters
+
+- (IBAction)toggleShowInvisibles:(id)sender {
+	[BeatUserDefaults.sharedDefaults toggleBool:BeatSettingShowInvisibles];
+	self.showInvisibles = [BeatUserDefaults.sharedDefaults getBool:BeatSettingShowInvisibles];
+	
+	[self.textView toggleShowInvisibles];
 		
 	[self updateLayout];
 }
